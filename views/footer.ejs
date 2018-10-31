@@ -1,0 +1,21 @@
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+  $(document).ready(function(){
+$('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+localStorage.setItem('activeTab', $(e.target).attr('href'));
+});
+var activeTab = localStorage.getItem('activeTab');
+if(activeTab){
+$('#myTab a[href="' + activeTab + '"]').tab('show');
+}
+});
+          $('.nav li').on('click',function(){
+             $('.nav li').removeClass('active');
+             $(this).addClass('active');
+          });
+    </script>
+  </body>
+</html>
